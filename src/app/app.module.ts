@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ListaEmpleadosComponent } from './lista-empleados/lista-empleados.component';
 import { RouterModule } from '@angular/router';
 import { RegistrarEmpleadoComponent } from './registrar-empleado/registrar-empleado.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { RegistrarEmpleadoComponent } from './registrar-empleado/registrar-emple
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
