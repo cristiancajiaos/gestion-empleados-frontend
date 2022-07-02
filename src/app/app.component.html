@@ -1,5 +1,20 @@
-<div class="container my-2">
-  <h2 class="text-center">Gestión Empleados Frontend</h2>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      Gestión de empleados
+    </a>
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="'empleados'" routerLinkActive="active" href="#">
+          Empleados
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container my-3">
+  <h2 class="text-center">{{title}}</h2>
 
   <router-outlet></router-outlet>
 </div>
