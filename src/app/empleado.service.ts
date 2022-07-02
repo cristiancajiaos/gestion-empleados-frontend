@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Observer } from 'rxjs';
 import { Empleado } from './empleado';
 
 @Injectable({
@@ -14,7 +14,13 @@ export class EmpleadoService {
     private http: HttpClient
   ) { }
 
+  /* Enlistar todos los empleados */
   obtenerListaEmpleados(): Observable<Empleado[]> {
     return this.http.get<Empleado[]>(`${this.baseUrl}`);
+  }
+
+  /* Registrar un empleado */
+  registrarEmpleado(empleado: Empleado): Observable<Object> {
+    return this.http.post(`${this.baseUrl}`, empleado);
   }
 }

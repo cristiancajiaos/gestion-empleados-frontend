@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Empleado } from '../empleado';
+import { EmpleadoService } from '../empleado.service';
 
 @Component({
   selector: 'app-registrar-empleado',
@@ -8,16 +10,32 @@ import { Empleado } from '../empleado';
 })
 export class RegistrarEmpleadoComponent implements OnInit {
 
-  empleado: Empleado = new Empleado();
+  public empleado: Empleado = new Empleado();
 
-  constructor() { }
+  constructor(
+    private empleadoService: EmpleadoService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     
   }
 
   public onSubmit(): void {
-    console.log(this.empleado);
+    this.guardarEmpleado();
+  }
+
+  /* La forma en como esto se hace en el tutorial original implica usar un callback como error. 
+     Temporalmente esto se omite */
+  public guardarEmpleado() {
+    this.empleadoService.registrarEmpleado(this.empleado).subscribe((dato: any) => {
+      console.log(dato);
+      this.irALaListaDeEmpleados();
+    });
+  }
+
+  public irALaListaDeEmpleados(): void {
+    this.router.navigate(['/empleados']);
   }
 
 }
