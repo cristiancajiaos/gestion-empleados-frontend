@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ListaEmpleadosComponent } from './lista-empleados/lista-empleados.component';
 
 const routes: Routes = [
-  {path: 'lista-empleados', component: ListaEmpleadosComponent},
-  {path: '', redirectTo: '/lista-empleados', pathMatch: 'full'}
+  {path: 'empleados', component: ListaEmpleadosComponent},
+  {path: '', redirectTo: '/empleados', pathMatch: 'full'}
 ];
 
 @NgModule({
