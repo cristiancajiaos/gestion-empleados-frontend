@@ -8,12 +8,14 @@ import { ListaEmpleadosComponent } from './lista-empleados/lista-empleados.compo
 import { RouterModule } from '@angular/router';
 import { RegistrarEmpleadoComponent } from './registrar-empleado/registrar-empleado.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ActualizarEmpleadoComponent } from './actualizar-empleado/actualizar-empleado.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaEmpleadosComponent,
-    RegistrarEmpleadoComponent
+    RegistrarEmpleadoComponent,
+    ActualizarEmpleadoComponent
   ],
   imports: [
     BrowserModule,
