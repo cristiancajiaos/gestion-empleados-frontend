@@ -2,24 +2,43 @@
   <div class="col-12 col-md-6 offset-md-3">
     <h3 class="text-center">Actualización de empleado</h3>
 
-    <form (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="onSubmit()" #empleadoForm="ngForm">
       <div class="form-group mb-3">
         <label for="nombre">Nombre</label>
         <input type="text" class="form-control" 
-               id="nombre" name="nombre" [(ngModel)]="empleado.nombre"/>
+               id="nombre" name="nombre" [(ngModel)]="empleado.nombre" placeholder="Ingrese su nombre" #nombre="ngModel" required/>
+      </div>
+      <div class="alert alert-danger mb-2" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+        <div *ngIf="nombre.errors['required']">
+          Se requiere este campo
+        </div>
       </div>
       <div class="form-group mb-3">
         <label for="nombre">Apellido</label>
         <input type="text" class="form-control" 
-               id="apellido" name="apellido" [(ngModel)]="empleado.apellido"/>
+               id="apellido" name="apellido" [(ngModel)]="empleado.apellido" placeholder="Ingrese su apellido" #apellido="ngModel" required/>
+      </div>
+      <div class="alert alert-danger mb-2" *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)">
+        <div *ngIf="apellido.errors['required']">
+          Se requiere este campo
+        </div>
       </div>
       <div class="form-group mb-3">
         <label for="nombre">Email</label>
         <input type="text" class="form-control" 
-               id="email" name="email" [(ngModel)]="empleado.email"/>
+               id="email" name="email" [(ngModel)]="empleado.email" placeholder="Ingrese su email" #email="ngModel" 
+               pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required/>
+      </div>
+      <div class="alert alert-danger mb-2" *ngIf="email.invalid && (email.dirty || email.touched)">
+        <div *ngIf="email.errors['required']">
+          Se requiere este campo
+        </div>
+        <div *ngIf="email.errors['pattern']">
+          Se debe ingresar una dirección de email válida: nombre@correo.com
+        </div>
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" class="btn btn-primary" [disabled]="empleadoForm.invalid">
           <i class="fa-solid fa-pencil fa-fw"></i> Actualizar empleado
         </button>
       </div>
