@@ -1,1 +1,26 @@
-<p>empleado-detalles works!</p>
+<div class="row">
+  <div class="col-12 col-md-6 offset-md-3">
+    <h3 class="text-center">Detalles del Empleado</h3>
+
+    <div *ngIf="empleado">
+      <div>
+        <strong>ID:</strong> {{empleado.id}}
+      </div>
+      <div>
+        <strong>Nombre:</strong> {{empleado.nombre}}
+      </div>
+      <div>
+        <strong>Apellido:</strong> {{empleado.apellido}}
+      </div>
+      <div>
+        <strong>Email:</strong> {{empleado.email}}
+      </div>
+    </div>
+
+    <hr/>
+
+    <button class="btn btn-danger" (click)="volver()">
+      <i class="fa-solid fa-arrow-left fa-fw"></i> Volver a la lista de empleados
+    </button>
+  </div>
+</div>
