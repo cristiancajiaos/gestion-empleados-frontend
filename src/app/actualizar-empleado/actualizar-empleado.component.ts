@@ -45,7 +45,7 @@ export class ActualizarEmpleadoComponent implements OnInit {
   private actualizarEmpleado(): void {
     this.empleadoService.modificarEmpleadoPorId(this.id, this.empleado).subscribe(dato => {
       console.log(dato);
-      this.router.navigate(['lista-empleados']);
+      this.router.navigate(['/empleados']);
     });
   }
 
