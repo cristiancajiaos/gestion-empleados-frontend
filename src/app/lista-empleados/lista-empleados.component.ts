@@ -25,4 +25,12 @@ export class ListaEmpleadosComponent implements OnInit {
     });
   }
 
+  public actualizarEmpleado(id: number): void {
+    
+  }
+
+  public eliminarEmpleado(id: number): void {
+
+  }
+
 }
