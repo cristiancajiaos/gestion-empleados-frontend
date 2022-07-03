@@ -26,11 +26,11 @@ export class EmpleadoService {
 
   /* Obtener empleado por ID */
   obtenerEmpleadoPorId(id: number): Observable<Object> {
-    return this.http.get(`${this.baseUrl}/id`);
+    return this.http.get(`${this.baseUrl}/${id}`);
   }
 
   /* Eliminar empleado por ID */
   eliminarEmpleado(id: number): Observable<Object> {
-    return this.http.delete(`${this.baseUrl}/id`);
+    return this.http.delete(`${this.baseUrl}/${id}`);
   }
 }
