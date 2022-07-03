@@ -38,4 +38,8 @@ export class ListaEmpleadosComponent implements OnInit {
     });
   }
 
+  public verDetalles(id: number): void {
+    this.router.navigate(['/empleado-detalles', id]);
+  }
+
 }

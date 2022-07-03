@@ -18,14 +18,16 @@
         <td>
           <div class="btn-group">
             <button class="btn btn-info" 
-                    (click)="actualizarEmpleado(empleado.id)"
-                    title="Actualizar">
+                    (click)="actualizarEmpleado(empleado.id)">
               <i class="fa-solid fa-pencil fa-fw"></i> Editar 
             </button>
             <button class="btn btn-danger" 
-                    (click)="eliminarEmpleado(empleado.id)"
-                    title="Eliminar">
+                    (click)="eliminarEmpleado(empleado.id)">
               <i class="fa-solid fa-times fa-fw"></i> Eliminar
+            </button>
+            <button class="btn btn-primary"
+                    (click)="verDetalles(empleado.id)">
+              <i class="fa-solid fa-info fa-fw"></i> Detalles
             </button>
           </div>
         </td>

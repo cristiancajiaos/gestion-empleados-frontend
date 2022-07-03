@@ -9,13 +9,15 @@ import { RouterModule } from '@angular/router';
 import { RegistrarEmpleadoComponent } from './registrar-empleado/registrar-empleado.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ActualizarEmpleadoComponent } from './actualizar-empleado/actualizar-empleado.component';
+import { EmpleadoDetallesComponent } from './empleado-detalles/empleado-detalles.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaEmpleadosComponent,
     RegistrarEmpleadoComponent,
-    ActualizarEmpleadoComponent
+    ActualizarEmpleadoComponent,
+    EmpleadoDetallesComponent
   ],
   imports: [
     BrowserModule,
