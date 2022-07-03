@@ -23,4 +23,14 @@ export class EmpleadoService {
   registrarEmpleado(empleado: Empleado): Observable<Object> {
     return this.http.post(`${this.baseUrl}`, empleado);
   }
+
+  /* Obtener empleado por ID */
+  obtenerEmpleadoPorId(id: number): Observable<Object> {
+    return this.http.get(`${this.baseUrl}/id`);
+  }
+
+  /* Eliminar empleado por ID */
+  eliminarEmpleado(id: number): Observable<Object> {
+    return this.http.delete(`${this.baseUrl}/id`);
+  }
 }
